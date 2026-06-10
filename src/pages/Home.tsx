@@ -1,7 +1,7 @@
-import React from 'react';
+
 import { Helmet } from 'react-helmet-async';
 import { useNavigate } from 'react-router-dom';
-import { ArrowRight, Beaker, ShieldCheck, Activity, CheckCircle2, HeartPulse, Microscope, Leaf } from 'lucide-react';
+import { ArrowRight, ShieldCheck, Activity, CheckCircle2, HeartPulse, Microscope, Leaf } from 'lucide-react';
 import { Section } from '../components/layout/Section';
 import { Container } from '../components/layout/Container';
 import { Button } from '../components/ui/Button';

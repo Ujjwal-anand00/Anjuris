@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { Search, X, Pill, FlaskConical, Syringe, Droplets, Leaf, ChevronRight, Info } from 'lucide-react';

@@ -1,8 +1,8 @@
-import React from 'react';
+
 import { Link } from 'react-router-dom';
-import { Pill, Mail, Phone, MapPin } from 'lucide-react';
+import { Mail, Phone, MapPin } from 'lucide-react';
 import { Container } from './Container';
-import { motion } from 'framer-motion';
+import { motion, type Variants } from 'framer-motion';
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -17,7 +17,7 @@ export const Footer = () => {
     },
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
   };
