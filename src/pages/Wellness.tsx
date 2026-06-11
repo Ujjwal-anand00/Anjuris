@@ -9,8 +9,8 @@ import { TiltCard } from '../components/ui/TiltCard';
 import { Button } from '../components/ui/Button';
 import {
   HeartPulse, ShieldCheck, Activity, Leaf, Zap, Brain,
-  Target, SearchCheck, CheckCircle2, ArrowRight, Dna,
-  TestTube2, Bone, Users, Microscope
+  Target, SearchCheck, CheckCircle2, Dna,
+  TestTube2, Bone, Users
 } from 'lucide-react';
 
 const AbstractWellnessGraphics = () => (

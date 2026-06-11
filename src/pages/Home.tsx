@@ -1,7 +1,7 @@
 
 import { Helmet } from 'react-helmet-async';
 import { useNavigate } from 'react-router-dom';
-import { ArrowRight, ShieldCheck, Activity, CheckCircle2, HeartPulse, Microscope, Leaf, Target } from 'lucide-react';
+import { ShieldCheck, Activity, CheckCircle2, HeartPulse, Microscope, Leaf, Target } from 'lucide-react';
 import { AnimatedCounter } from '../components/animations/AnimatedCounter';
 import { Section } from '../components/layout/Section';
 import { Container } from '../components/layout/Container';
