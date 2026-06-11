@@ -5,7 +5,6 @@ import { Section } from '../components/layout/Section';
 import { Container } from '../components/layout/Container';
 import { FadeIn } from '../components/animations/FadeIn';
 import { StaggerGroup, StaggerItem } from '../components/animations/StaggerGroup';
-import { AnimatedCounter } from '../components/animations/AnimatedCounter';
 import { TiltCard } from '../components/ui/TiltCard';
 import { Button } from '../components/ui/Button';
 import {
@@ -132,10 +131,10 @@ export const Wellness = () => {
 
               <div className="flex flex-col sm:flex-row items-center gap-4">
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full sm:w-auto">
-                  <Button size="lg" className="w-full bg-accent hover:bg-accent/90 text-white shadow-[0_0_20px_rgba(20,184,166,0.4)] border-none">
+                  {/* <Button size="lg" className="w-full bg-accent hover:bg-accent/90 text-white shadow-[0_0_20px_rgba(20,184,166,0.4)] border-none">
                     Explore Wellness Solutions
                     <ArrowRight className="ml-2 h-5 w-5" />
-                  </Button>
+                  </Button> */}
                 </motion.div>
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full sm:w-auto">
                   <Button variant="outline" size="lg" className="w-full text-white border-white/20 hover:bg-white/10" onClick={() => navigate('/contact')}>
@@ -296,50 +295,6 @@ export const Wellness = () => {
         </Container>
       </Section>
 
-      {/* TRUST & QUALITY SECTION */}
-      <Section className="bg-white dark:bg-slate-950">
-        <Container>
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <FadeIn direction="right">
-              <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6">Unwavering Commitment to Quality</h2>
-              <p className="text-lg text-slate-600 dark:text-slate-400 mb-8">
-                Our nutraceuticals are manufactured alongside our pharmaceutical products, ensuring they meet the same exacting standards of quality assurance, safety, and research excellence.
-              </p>
-
-              <div className="grid grid-cols-2 gap-8">
-                <div>
-                  <div className="text-4xl font-bold text-accent mb-2">
-                    <AnimatedCounter value={100} suffix="%" />
-                  </div>
-                  <div className="text-sm font-semibold text-slate-500 uppercase tracking-wider">Quality Assurance</div>
-                </div>
-                <div>
-                  <div className="text-4xl font-bold text-accent mb-2">
-                    <AnimatedCounter value={0} />
-                  </div>
-                  <div className="text-sm font-semibold text-slate-500 uppercase tracking-wider">Compromises</div>
-                </div>
-              </div>
-            </FadeIn>
-
-            <FadeIn direction="left" delay={0.2}>
-              <div className="grid sm:grid-cols-2 gap-4">
-                {[
-                  { title: "Quality Assurance", icon: ShieldCheck },
-                  { title: "Safety Standards", icon: Activity },
-                  { title: "Research Excellence", icon: Microscope },
-                  { title: "Ethical Practices", icon: Target }
-                ].map((badge, i) => (
-                  <div key={i} className="bg-slate-50 dark:bg-slate-900 p-6 rounded-2xl flex flex-col items-center text-center border border-slate-100 dark:border-slate-800">
-                    <badge.icon size={32} className="text-accent mb-4" />
-                    <h4 className="font-bold text-slate-900 dark:text-white">{badge.title}</h4>
-                  </div>
-                ))}
-              </div>
-            </FadeIn>
-          </div>
-        </Container>
-      </Section>
 
       {/* CALL TO ACTION */}
       <Section className="relative overflow-hidden bg-[#020617] py-24 border-t border-slate-900">
@@ -360,9 +315,9 @@ export const Wellness = () => {
                 <Button size="lg" className="w-full sm:w-auto bg-accent hover:bg-accent/90 text-white shadow-[0_0_20px_rgba(20,184,166,0.4)] border-none" onClick={() => navigate('/contact')}>
                   Contact Us
                 </Button>
-                <Button variant="outline" size="lg" className="w-full sm:w-auto text-white border-white/20 hover:bg-white/10" onClick={() => navigate('/products')}>
+                {/* <Button variant="outline" size="lg" className="w-full sm:w-auto text-white border-white/20 hover:bg-white/10" onClick={() => navigate('/products')}>
                   Explore Products
-                </Button>
+                </Button> */}
               </div>
             </div>
           </FadeIn>

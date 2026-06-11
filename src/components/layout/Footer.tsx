@@ -23,7 +23,7 @@ export const Footer = () => {
   };
 
   return (
-    <footer className="bg-slate-950 text-slate-300 pt-20 pb-10 border-t border-slate-900 relative overflow-hidden">
+    <footer className="bg-slate-950 text-slate-300 pt-12 pb-6 border-t border-slate-900 relative overflow-hidden">
       {/* Background glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-[2px] bg-gradient-to-r from-transparent via-primary/50 to-transparent"></div>
       <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-full max-w-xl h-48 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
@@ -34,16 +34,16 @@ export const Footer = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
         >
           {/* Brand Info */}
-          <motion.div variants={itemVariants} className="space-y-6">
+          <motion.div variants={itemVariants} className="space-y-4">
             <Link to="/" className="inline-block group mb-2">
               <div className="inline-flex transition-transform duration-300 group-hover:scale-105">
                 <img
                   src="/logo.png"
                   alt="Anjuris Lifesciences Logo"
-                  className="h-30 md:h-38 w-auto object-contain"
+                  className="h-20 md:h-24 w-auto object-contain"
                 />
               </div>
             </Link>
@@ -65,10 +65,10 @@ export const Footer = () => {
 
           {/* Quick Links */}
           <motion.div variants={itemVariants}>
-            <h3 className="text-white font-heading font-semibold text-lg mb-6 tracking-wide">Company</h3>
-            <ul className="space-y-4 text-sm">
+            <h3 className="text-white font-heading font-semibold text-lg mb-4 tracking-wide">Company</h3>
+            <ul className="space-y-2 text-sm">
               <li><Link to="/about" className="hover:text-primary transition-colors flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-primary/50"></span> About Us</Link></li>
-              <li><Link to="/products" className="hover:text-primary transition-colors flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-primary/50"></span> Our Products</Link></li>
+              {/* <li><Link to="/products" className="hover:text-primary transition-colors flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-primary/50"></span> Our Products</Link></li> */}
               <li><Link to="/research" className="hover:text-primary transition-colors flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-primary/50"></span> Research & Innovation</Link></li>
               <li><Link to="/quality" className="hover:text-primary transition-colors flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-primary/50"></span> Quality Assurance</Link></li>
               <li><Link to="/wellness" className="hover:text-primary transition-colors flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-primary/50"></span> Nutraceuticals</Link></li>
@@ -77,8 +77,8 @@ export const Footer = () => {
 
           {/* Contact */}
           <motion.div variants={itemVariants}>
-            <h3 className="text-white font-heading font-semibold text-lg mb-6 tracking-wide">Contact Us</h3>
-            <ul className="space-y-4 text-sm">
+            <h3 className="text-white font-heading font-semibold text-lg mb-4 tracking-wide">Contact Us</h3>
+            <ul className="space-y-2 text-sm">
               <li className="flex items-start gap-3 group">
                 <div className="mt-1 p-1.5 bg-slate-900 rounded-md group-hover:bg-primary/20 transition-colors">
                   <MapPin size={16} className="text-primary" />
@@ -104,8 +104,8 @@ export const Footer = () => {
 
           {/* Newsletter */}
           <motion.div variants={itemVariants}>
-            <h3 className="text-white font-heading font-semibold text-lg mb-6 tracking-wide">Newsletter</h3>
-            <p className="text-sm text-slate-400 mb-6 leading-relaxed">
+            <h3 className="text-white font-heading font-semibold text-lg mb-4 tracking-wide">Newsletter</h3>
+            <p className="text-sm text-slate-400 mb-4 leading-relaxed">
               Subscribe to our newsletter for the latest updates on healthcare innovation and product launches.
             </p>
             <form className="relative flex items-center" onSubmit={(e) => e.preventDefault()}>
@@ -115,11 +115,11 @@ export const Footer = () => {
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="bg-slate-900 text-white text-sm pl-11 pr-32 py-3.5 rounded-full border border-slate-800 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary w-full transition-all"
+                className="bg-slate-900 text-white text-sm pl-11 pr-28 py-2.5 rounded-full border border-slate-800 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary w-full transition-all"
               />
               <button
                 type="submit"
-                className="absolute right-1.5 bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-full transition-colors font-medium text-sm shadow-lg shadow-primary/20"
+                className="absolute right-1.5 bg-primary hover:bg-primary/90 text-white px-4 py-1.5 rounded-full transition-colors font-medium text-sm shadow-lg shadow-primary/20"
               >
                 Subscribe
               </button>
@@ -132,7 +132,7 @@ export const Footer = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1, delay: 0.5 }}
-          className="mt-16 pt-8 border-t border-slate-900 text-center text-sm text-slate-500 flex flex-col md:flex-row justify-between items-center gap-4"
+          className="mt-10 pt-6 border-t border-slate-900 text-center text-sm text-slate-500 flex flex-col md:flex-row justify-between items-center gap-4"
         >
           <p>&copy; {currentYear} Anjuris Lifesciences Pvt. Ltd. All rights reserved.</p>
           <div className="flex gap-6">

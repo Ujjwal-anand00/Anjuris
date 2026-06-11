@@ -8,7 +8,7 @@ import { Button } from '../ui/Button';
 const links = [
   { name: 'Home', path: '/' },
   { name: 'About Us', path: '/about' },
-  { name: 'Products', path: '/products' },
+  // { name: 'Products', path: '/products' },
   { name: 'Research', path: '/research' },
   { name: 'Quality', path: '/quality' },
   { name: 'Wellness', path: '/wellness' },

@@ -11,12 +11,12 @@ const AbstractMedicalIllustration = () => {
   return (
     <div className="relative w-full aspect-square md:aspect-[4/3] lg:aspect-square flex items-center justify-center">
       {/* Floating background shapes */}
-      <motion.div 
+      <motion.div
         animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }}
         transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
         className="absolute top-10 right-10 w-40 h-40 bg-primary/30 rounded-full blur-[60px] mix-blend-screen"
       />
-      <motion.div 
+      <motion.div
         animate={{ y: [0, 20, 0], x: [0, -20, 0] }}
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
         className="absolute bottom-10 left-10 w-56 h-56 bg-secondary/20 rounded-full blur-[80px] mix-blend-screen"
@@ -26,17 +26,17 @@ const AbstractMedicalIllustration = () => {
       <div className="relative w-full max-w-sm aspect-square bg-slate-900/40 backdrop-blur-2xl border border-white/10 rounded-[3rem] shadow-[0_0_50px_rgba(15,118,110,0.15)] p-8 flex items-center justify-center overflow-hidden group">
         {/* Animated grid background */}
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTSAwIDEwIEwgMjAgMTAgTSAxMCAwIEwgMTAgMjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9zdmc+')] opacity-40 group-hover:opacity-80 transition-opacity duration-700"></div>
-        
+
         {/* Subtle inner glow */}
         <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-50"></div>
 
         {/* Central Core */}
-        <motion.div 
+        <motion.div
           animate={{ rotate: 360 }}
           transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
           className="relative z-10 w-56 h-56 border border-dashed border-primary/30 rounded-full flex items-center justify-center"
         >
-          <motion.div 
+          <motion.div
             animate={{ rotate: -720 }}
             transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
             className="w-40 h-40 border border-secondary/30 rounded-full flex items-center justify-center relative"
@@ -48,10 +48,10 @@ const AbstractMedicalIllustration = () => {
               <HeartPulse size={36} className="animate-pulse drop-shadow-md" />
             </div>
           </motion.div>
-          
+
           {/* Orbiting nodes */}
           {[0, 120, 240].map((deg, i) => (
-            <motion.div 
+            <motion.div
               key={i}
               className="absolute w-4 h-4 bg-white border-2 border-primary rounded-full shadow-[0_0_15px_rgba(255,255,255,0.8)]"
               style={{
@@ -75,7 +75,7 @@ const AbstractMedicalIllustration = () => {
 export const AboutUs = () => {
   return (
     <div className="pt-24 min-h-screen bg-[#020617] overflow-hidden selection:bg-primary/30">
-      
+
       {/* Hero Section */}
       <Section className="relative z-10">
         <Container>
@@ -85,7 +85,7 @@ export const AboutUs = () => {
               <FadeIn direction="up" delay={0.1}>
                 <h4 className="text-primary font-semibold tracking-wider uppercase text-sm mb-2">Who We Are</h4>
                 <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight">
-                  A Legacy of Trust,<br/>A Future of <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent via-primary to-secondary">Innovation.</span>
+                  A Legacy of Trust,<br />A Future of <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent via-primary to-secondary">Innovation.</span>
                 </h1>
               </FadeIn>
 
@@ -103,18 +103,18 @@ export const AboutUs = () => {
               {/* Stats Timeline / Counters */}
               <FadeIn direction="up" delay={0.3}>
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 pt-6 border-t border-slate-800">
-                  <div>
+                  {/* <div>
                     <div className="text-3xl font-bold text-white mb-1">
                       <AnimatedCounter value={1995} />
                     </div>
                     <div className="text-sm text-slate-400 font-medium">Year Established</div>
-                  </div>
-                  <div>
+                  </div> */}
+                  {/* <div>
                     <div className="text-3xl font-bold text-white mb-1">
                       <AnimatedCounter value={50} suffix="+" />
                     </div>
                     <div className="text-sm text-slate-400 font-medium">Countries Reached</div>
-                  </div>
+                  </div> */}
                   <div>
                     <div className="text-3xl font-bold text-white mb-1">
                       <AnimatedCounter value={100} suffix="k+" />
@@ -136,16 +136,16 @@ export const AboutUs = () => {
       {/* Vision & Mission Section */}
       <Section className="relative bg-white overflow-hidden py-24">
         {/* Floating background elements */}
-        <motion.div 
+        <motion.div
           animate={{ rotate: 360 }}
           transition={{ duration: 150, repeat: Infinity, ease: "linear" }}
           className="absolute -top-[50%] -left-[20%] w-[1200px] h-[1200px] bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMjAiIGN5PSIyMCIgcj0iMSIgZmlsbD0iIzBGNzY2RSIgb3BhY2l0eT0iMC4yIi8+PC9zdmc+')] opacity-60 pointer-events-none"
         />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-3xl pointer-events-none" />
-        
+
         <Container className="relative z-10">
           <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
-            
+
             {/* Vision Card */}
             <FadeIn direction="right">
               <div className="group relative h-full">
@@ -155,7 +155,7 @@ export const AboutUs = () => {
                   <div className="absolute top-0 right-0 p-8 text-primary opacity-[0.03] group-hover:opacity-[0.08] group-hover:scale-110 transition-all duration-700 transform translate-x-12 -translate-y-12">
                     <Eye size={250} />
                   </div>
-                  
+
                   <div className="relative z-10">
                     <div className="w-20 h-20 bg-gradient-to-br from-primary/20 to-primary/5 rounded-3xl flex items-center justify-center text-primary mb-8 group-hover:scale-110 group-hover:bg-primary group-hover:text-white transition-all duration-500 shadow-inner">
                       <Eye size={36} />
@@ -234,7 +234,7 @@ export const AboutUs = () => {
       </Section>
 
       {/* Timeline Section */}
-      <Section className="bg-white">
+      {/* <Section className="bg-white">
         <Container>
           <FadeIn className="text-center mb-16">
             <h2 className="text-3xl font-bold text-slate-900">Our Journey</h2>
@@ -242,11 +242,11 @@ export const AboutUs = () => {
           </FadeIn>
 
           <div className="max-w-4xl mx-auto relative">
-            {/* Timeline track background */}
+           
             <div className="absolute left-[15px] md:left-1/2 top-0 bottom-0 w-1 bg-slate-100 md:-ml-[2px]"></div>
+
             
-            {/* Animated track fill */}
-            <motion.div 
+            <motion.div
               className="absolute left-[15px] md:left-1/2 top-0 bottom-0 w-1 bg-primary md:-ml-[2px] origin-top"
               initial={{ scaleY: 0 }}
               whileInView={{ scaleY: 1 }}
@@ -262,10 +262,10 @@ export const AboutUs = () => {
                 { year: "2024", title: "Pioneering the Future", desc: "Launched our innovative nutraceuticals line, embracing holistic wellness." }
               ].map((milestone, i) => (
                 <StaggerItem key={i} className="relative flex flex-col md:flex-row items-center group">
-                  {/* Marker */}
+                
                   <div className="absolute left-0 md:left-1/2 w-8 h-8 rounded-full bg-white border-4 border-primary md:-ml-4 z-10 group-hover:scale-125 transition-transform shadow-lg shadow-primary/20"></div>
-                  
-                  {/* Content (Alternating sides) */}
+
+                 
                   <div className={`ml-12 md:ml-0 md:w-5/12 w-full ${i % 2 === 0 ? 'md:pr-12 md:text-right' : 'md:pl-12 md:ml-auto'}`}>
                     <div className="text-primary font-bold text-xl mb-1">{milestone.year}</div>
                     <h4 className="text-lg font-bold text-slate-900 mb-2">{milestone.title}</h4>
@@ -278,7 +278,7 @@ export const AboutUs = () => {
             </StaggerGroup>
           </div>
         </Container>
-      </Section>
+      </Section> */}
     </div>
   );
 };
