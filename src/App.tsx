@@ -17,6 +17,9 @@ import { Research } from './pages/Research';
 import { Quality } from './pages/Quality';
 import { Wellness } from './pages/Wellness';
 import { Contact } from './pages/Contact';
+import { TermsOfService } from './pages/TermsOfService';
+import { PrivacyPolicy } from './pages/PrivacyPolicy';
+import { Sitemap } from './pages/Sitemap';
 
 const PageTransition = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -49,6 +52,9 @@ const AnimatedRoutes = () => {
         <Route path="/quality" element={<PageTransition><Quality /></PageTransition>} />
         <Route path="/wellness" element={<PageTransition><Wellness /></PageTransition>} />
         <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
+        <Route path="/terms-of-service" element={<PageTransition><TermsOfService /></PageTransition>} />
+        <Route path="/privacy-policy" element={<PageTransition><PrivacyPolicy /></PageTransition>} />
+        <Route path="/sitemap" element={<PageTransition><Sitemap /></PageTransition>} />
       </Routes>
     </AnimatePresence>
   );

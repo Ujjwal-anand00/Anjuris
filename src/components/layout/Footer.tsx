@@ -136,9 +136,8 @@ export const Footer = () => {
         >
           <p>&copy; {currentYear} Anjuris Lifesciences Pvt. Ltd. All rights reserved.</p>
           <div className="flex gap-6">
-            <a href="#" className="hover:text-primary transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-primary transition-colors">Terms of Service</a>
-            <a href="#" className="hover:text-primary transition-colors">Sitemap</a>
+            <Link to="/privacy-policy" className="hover:text-primary transition-colors">Privacy Policy</Link>
+            <Link to="/terms-of-service" className="hover:text-primary transition-colors">Terms of Service</Link>
           </div>
         </motion.div>
       </Container>

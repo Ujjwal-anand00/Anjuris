@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { SEO } from '../components/SEO';
 import { Section } from '../components/layout/Section';
 import { Container } from '../components/layout/Container';
 import { FadeIn } from '../components/animations/FadeIn';
@@ -35,6 +36,11 @@ export const Contact = () => {
 
   return (
     <div className="min-h-screen bg-slate-50 selection:bg-primary/20">
+      <SEO
+        title="Contact Us | Anjuris Lifesciences Pvt. Ltd."
+        description="Get in touch with Anjuris Lifesciences for product information, partnerships, business inquiries, and healthcare solutions."
+        path="/contact"
+      />
 
       {/* Header Section */}
       <Section className="relative bg-slate-900 text-white overflow-hidden pt-32 pb-24 border-b border-slate-800">
@@ -43,7 +49,7 @@ export const Contact = () => {
 
         <Container className="relative z-10">
           <FadeIn className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-md text-primary-50 font-medium text-sm mb-6 shadow-lg">
+            <div className="inline-flex items-center gap-2 mt-16 px-4 py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-md text-primary-50 font-medium text-sm mb-6 shadow-lg">
               <Building2 size={16} className="text-accent" /> Reach Out To Us
             </div>
             <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight">Get in Touch with<br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Anjuris Lifesciences</span></h1>

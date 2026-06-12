@@ -1,5 +1,6 @@
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import { SEO } from '../components/SEO';
 import { useNavigate } from 'react-router-dom';
 import { Section } from '../components/layout/Section';
 import { Container } from '../components/layout/Container';
@@ -102,6 +103,11 @@ export const Wellness = () => {
   const navigate = useNavigate();
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-slate-950 transition-colors duration-500 overflow-hidden selection:bg-accent/30">
+      <SEO
+        title="Nutraceuticals & Wellness | Anjuris Lifesciences Pvt. Ltd."
+        description="Discover scientifically formulated wellness and nutraceutical products designed to support healthy living and preventive healthcare."
+        path="/wellness"
+      />
 
       {/* HERO SECTION */}
       <Section className="relative min-h-[90vh] pt-32 flex items-center bg-[#020617] border-b border-slate-900">

@@ -1,5 +1,5 @@
 
-import { Helmet } from 'react-helmet-async';
+import { SEO } from '../components/SEO';
 import { useNavigate } from 'react-router-dom';
 import { ShieldCheck, Activity, CheckCircle2, HeartPulse, Microscope, Leaf, Target } from 'lucide-react';
 import { AnimatedCounter } from '../components/animations/AnimatedCounter';
@@ -17,10 +17,12 @@ export const Home = () => {
   const navigate = useNavigate();
   return (
     <>
-      <Helmet>
-        <title>Anjuris Lifesciences | Premium Healthcare Innovation</title>
-        <meta name="description" content="Anjuris Lifesciences is a leading pharmaceutical company committed to nurturing life with trust, uncompromising quality, and global healthcare solutions." />
-      </Helmet>
+      <SEO
+        title="Anjuris Lifesciences Pvt. Ltd. | Pharmaceutical Company in India"
+        description="Anjuris Lifesciences Pvt. Ltd. is a trusted pharmaceutical and healthcare company providing high-quality medicines, nutraceuticals, wellness products, and innovative healthcare solutions."
+        keywords="Pharmaceutical Company, Pharma Company India, Healthcare Products, Nutraceuticals, Wellness Supplements, Pharmaceutical Solutions, Quality Medicines, Anjuris Lifesciences"
+        path="/"
+      />
       <div className="flex flex-col w-full">
         {/* Premium Fortune 500 Hero Section */}
         <section className="relative min-h-[100vh] flex items-center justify-center pt-24 pb-16 overflow-hidden bg-slate-950">

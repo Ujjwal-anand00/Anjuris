@@ -1,5 +1,6 @@
 
 import { motion } from 'framer-motion';
+import { SEO } from '../components/SEO';
 import { Section } from '../components/layout/Section';
 import { Container } from '../components/layout/Container';
 import { FadeIn } from '../components/animations/FadeIn';
@@ -75,6 +76,11 @@ const AbstractMedicalIllustration = () => {
 export const AboutUs = () => {
   return (
     <div className="pt-24 min-h-screen bg-[#020617] overflow-hidden selection:bg-primary/30">
+      <SEO
+        title="About Us | Anjuris Lifesciences Pvt. Ltd."
+        description="Learn about Anjuris Lifesciences, our vision, mission, commitment to quality, innovation, and patient-centric healthcare solutions."
+        path="/about"
+      />
 
       {/* Hero Section */}
       <Section className="relative z-10">

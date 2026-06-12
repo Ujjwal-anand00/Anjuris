@@ -1,0 +1,62 @@
+import { Helmet } from 'react-helmet-async';
+
+interface SEOProps {
+  title: string;
+  description: string;
+  keywords?: string;
+  path?: string;
+}
+
+export const SEO = ({ title, description, keywords, path = '' }: SEOProps) => {
+  const siteUrl = 'https://anjurislifesciences.com';
+  const url = `${siteUrl}${path}`;
+  const defaultKeywords = 'Anjuris Lifesciences, pharmaceutical, healthcare, medicines, innovation, wellness solutions';
+
+  return (
+    <Helmet>
+      {/* Standard Metadata */}
+      <title>{title}</title>
+      <meta name="description" content={description} />
+      <meta name="keywords" content={keywords || defaultKeywords} />
+
+      {/* Canonical Link */}
+      <link rel="canonical" href={url} />
+
+      {/* Open Graph / Facebook */}
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content={url} />
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={description} />
+      <meta property="og:image" content={`${siteUrl}/logo.png`} />
+
+      {/* Twitter */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:url" content={url} />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={`${siteUrl}/logo.png`} />
+      
+      {/* Schema.org Organization Structured Data (only on home page but safe to include generally or we can conditionally include) */}
+      {path === '/' && (
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Anjuris Lifesciences Pvt. Ltd.",
+            "url": siteUrl,
+            "logo": `${siteUrl}/logo.png`,
+            "description": "Pharmaceutical and healthcare company focused on innovation, quality, and wellness.",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "C/o Anil Jadhav, 45/2, Bhosari Pune, Indrayaninagar",
+              "addressLocality": "Pune",
+              "addressRegion": "Maharashtra",
+              "postalCode": "411026",
+              "addressCountry": "IN"
+            }
+          })}
+        </script>
+      )}
+    </Helmet>
+  );
+};
