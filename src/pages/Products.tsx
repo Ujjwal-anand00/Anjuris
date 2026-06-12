@@ -139,6 +139,7 @@ export const Products = () => {
                         alt={product.name}
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                         loading="lazy"
+                        decoding="async"
                       />
                       <div className="absolute top-4 left-4 z-20">
                         <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-white/90 backdrop-blur text-primary text-xs font-semibold rounded-full shadow-sm">
@@ -203,6 +204,8 @@ export const Products = () => {
                     src={selectedProduct.image}
                     alt={selectedProduct.name}
                     className="w-full h-full object-cover"
+                    loading="lazy"
+                    decoding="async"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
 

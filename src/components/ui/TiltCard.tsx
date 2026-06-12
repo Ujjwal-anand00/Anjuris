@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { cn } from '../../lib/utils';
 
@@ -9,6 +9,13 @@ interface TiltCardProps {
 
 export const TiltCard = ({ children, className }: TiltCardProps) => {
   const ref = useRef<HTMLDivElement>(null);
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
+
+  useEffect(() => {
+    if (window.matchMedia('(hover: none) and (pointer: coarse)').matches) {
+      setIsTouchDevice(true);
+    }
+  }, []);
 
   const x = useMotionValue(0);
   const y = useMotionValue(0);
@@ -20,7 +27,7 @@ export const TiltCard = ({ children, className }: TiltCardProps) => {
   const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-15deg", "15deg"]);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!ref.current) return;
+    if (isTouchDevice || !ref.current) return;
     const rect = ref.current.getBoundingClientRect();
     const width = rect.width;
     const height = rect.height;
@@ -33,6 +40,7 @@ export const TiltCard = ({ children, className }: TiltCardProps) => {
   };
 
   const handleMouseLeave = () => {
+    if (isTouchDevice) return;
     x.set(0);
     y.set(0);
   };
@@ -43,11 +51,11 @@ export const TiltCard = ({ children, className }: TiltCardProps) => {
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       style={{
-        rotateY,
-        rotateX,
+        rotateY: isTouchDevice ? 0 : rotateY,
+        rotateX: isTouchDevice ? 0 : rotateX,
         transformStyle: "preserve-3d",
       }}
-      whileHover={{ scale: 1.05 }}
+      whileHover={isTouchDevice ? {} : { scale: 1.05 }}
       transition={{ ease: "easeOut" }}
       className={cn("relative group cursor-pointer", className)}
     >

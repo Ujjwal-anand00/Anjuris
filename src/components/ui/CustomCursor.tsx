@@ -4,11 +4,18 @@ import { motion, useSpring } from 'framer-motion';
 export const CustomCursor = () => {
   const [mousePosition, setMousePosition] = useState({ x: -100, y: -100 });
   const [isHovering, setIsHovering] = useState(false);
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
 
   const cursorX = useSpring(-100, { stiffness: 500, damping: 28 });
   const cursorY = useSpring(-100, { stiffness: 500, damping: 28 });
 
   useEffect(() => {
+    // Check if it's a touch device
+    if (window.matchMedia('(hover: none) and (pointer: coarse)').matches) {
+      setIsTouchDevice(true);
+      return;
+    }
+
     const updateMousePosition = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
       cursorX.set(e.clientX - 16);
@@ -39,7 +46,8 @@ export const CustomCursor = () => {
     };
   }, [cursorX, cursorY]);
 
-  // Hide cursor on touch devices by default using CSS classes
+  if (isTouchDevice) return null;
+
   return (
     <>
       <motion.div

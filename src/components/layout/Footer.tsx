@@ -97,7 +97,7 @@ export const Footer = () => {
                 <div className="p-1.5 bg-slate-900 rounded-md group-hover:bg-primary/20 transition-colors">
                   <Mail size={16} className="text-primary" />
                 </div>
-                <span className="text-slate-400 group-hover:text-slate-300 transition-colors">contact@anjurislifesciences.com</span>
+                <span className="text-slate-400 group-hover:text-slate-300 transition-colors">info@anjurislifesciences.com</span>
               </li>
             </ul>
           </motion.div>

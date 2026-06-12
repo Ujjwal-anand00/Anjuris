@@ -10,16 +10,24 @@ import { CustomCursor } from './components/ui/CustomCursor';
 import { ScrollProgress } from './components/ui/ScrollProgress';
 import { LoadingScreen } from './components/ui/LoadingScreen';
 
-import { Home } from './pages/Home';
-import { AboutUs } from './pages/AboutUs';
-import { Products } from './pages/Products';
-import { Research } from './pages/Research';
-import { Quality } from './pages/Quality';
-import { Wellness } from './pages/Wellness';
-import { Contact } from './pages/Contact';
-import { TermsOfService } from './pages/TermsOfService';
-import { PrivacyPolicy } from './pages/PrivacyPolicy';
-import { Sitemap } from './pages/Sitemap';
+import { Suspense, lazy } from 'react';
+
+const Home = lazy(() => import('./pages/Home').then(module => ({ default: module.Home })));
+const AboutUs = lazy(() => import('./pages/AboutUs').then(module => ({ default: module.AboutUs })));
+const Products = lazy(() => import('./pages/Products').then(module => ({ default: module.Products })));
+const Research = lazy(() => import('./pages/Research').then(module => ({ default: module.Research })));
+const Quality = lazy(() => import('./pages/Quality').then(module => ({ default: module.Quality })));
+const Wellness = lazy(() => import('./pages/Wellness').then(module => ({ default: module.Wellness })));
+const Contact = lazy(() => import('./pages/Contact').then(module => ({ default: module.Contact })));
+const TermsOfService = lazy(() => import('./pages/TermsOfService').then(module => ({ default: module.TermsOfService })));
+const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy').then(module => ({ default: module.PrivacyPolicy })));
+const Sitemap = lazy(() => import('./pages/Sitemap').then(module => ({ default: module.Sitemap })));
+
+const RouteFallback = () => (
+  <div className="w-full h-[60vh] flex items-center justify-center">
+    <div className="w-12 h-12 border-4 border-slate-200 border-t-primary rounded-full animate-spin"></div>
+  </div>
+);
 
 const PageTransition = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -44,24 +52,30 @@ const AnimatedRoutes = () => {
 
   return (
     <AnimatePresence mode="wait">
-      <Routes location={location} key={location.pathname}>
-        <Route path="/" element={<PageTransition><Home /></PageTransition>} />
-        <Route path="/about" element={<PageTransition><AboutUs /></PageTransition>} />
-        <Route path="/products" element={<PageTransition><Products /></PageTransition>} />
-        <Route path="/research" element={<PageTransition><Research /></PageTransition>} />
-        <Route path="/quality" element={<PageTransition><Quality /></PageTransition>} />
-        <Route path="/wellness" element={<PageTransition><Wellness /></PageTransition>} />
-        <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
-        <Route path="/terms-of-service" element={<PageTransition><TermsOfService /></PageTransition>} />
-        <Route path="/privacy-policy" element={<PageTransition><PrivacyPolicy /></PageTransition>} />
-        <Route path="/sitemap" element={<PageTransition><Sitemap /></PageTransition>} />
-      </Routes>
+      <Suspense fallback={<RouteFallback />}>
+        <Routes location={location} key={location.pathname}>
+          <Route path="/" element={<PageTransition><Home /></PageTransition>} />
+          <Route path="/about" element={<PageTransition><AboutUs /></PageTransition>} />
+          <Route path="/products" element={<PageTransition><Products /></PageTransition>} />
+          <Route path="/research" element={<PageTransition><Research /></PageTransition>} />
+          <Route path="/quality" element={<PageTransition><Quality /></PageTransition>} />
+          <Route path="/wellness" element={<PageTransition><Wellness /></PageTransition>} />
+          <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
+          <Route path="/terms-of-service" element={<PageTransition><TermsOfService /></PageTransition>} />
+          <Route path="/privacy-policy" element={<PageTransition><PrivacyPolicy /></PageTransition>} />
+          <Route path="/sitemap" element={<PageTransition><Sitemap /></PageTransition>} />
+        </Routes>
+      </Suspense>
     </AnimatePresence>
   );
 };
 
 function App() {
   useEffect(() => {
+    // Only initialize Lenis on non-touch devices for better performance
+    const isTouchDevice = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
+    if (isTouchDevice) return;
+
     const lenis = new Lenis({
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -69,7 +83,6 @@ function App() {
       gestureOrientation: 'vertical',
       smoothWheel: true,
       wheelMultiplier: 1,
-      touchMultiplier: 2,
     });
 
     function raf(time: number) {
