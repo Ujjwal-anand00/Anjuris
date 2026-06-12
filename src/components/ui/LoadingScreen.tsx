@@ -23,23 +23,23 @@ export const LoadingScreen = () => {
           className="fixed inset-0 z-[10000] bg-[#020617] flex flex-col items-center justify-center"
         >
           <motion.div
-            animate={{ 
+            animate={{
               scale: [1, 1.2, 1],
               rotate: [0, 180, 360],
             }}
-            transition={{ 
-              duration: 2, 
-              ease: "easeInOut", 
-              times: [0, 0.5, 1], 
-              repeat: Infinity 
+            transition={{
+              duration: 2,
+              ease: "easeInOut",
+              times: [0, 0.5, 1],
+              repeat: Infinity
             }}
             className="w-16 h-16 bg-primary/20 rounded-2xl flex items-center justify-center mb-6 shadow-[0_0_30px_rgba(15,118,110,0.5)] border border-primary/30"
           >
             <Pill className="text-primary w-8 h-8" />
           </motion.div>
-          
+
           <div className="overflow-hidden">
-            <motion.h1 
+            <motion.h1
               initial={{ y: 50, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.2, duration: 0.5 }}
@@ -48,11 +48,11 @@ export const LoadingScreen = () => {
               Anjuris <span className="text-primary">Lifesciences</span>
             </motion.h1>
           </div>
-          
-          <motion.div 
+
+          <motion.div
             className="w-48 h-1 bg-slate-800 mt-8 rounded-full overflow-hidden"
           >
-            <motion.div 
+            <motion.div
               initial={{ x: "-100%" }}
               animate={{ x: "100%" }}
               transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}

@@ -25,7 +25,7 @@ export const Contact = () => {
     {
       icon: Mail,
       title: "Email Address",
-      content: "contact@anjurislifesciences.com\nsupport@anjurislifesciences.com"
+      content: "info@anjurislifesciences.com"
     },
     {
       icon: Clock,

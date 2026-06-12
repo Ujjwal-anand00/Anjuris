@@ -76,21 +76,21 @@ export const PrivacyPolicy = () => {
           <h4 className="font-bold text-xl mb-6 text-teal-700 dark:text-teal-400">ANJURIS LIFESCIENCES PVT. LTD.</h4>
           <div className="space-y-4">
             <p>
-              <strong className="text-slate-900 dark:text-white">Address:</strong><br/>
+              <strong className="text-slate-900 dark:text-white">Address:</strong><br />
               <span className="text-slate-600 dark:text-slate-300">
-                C/o Anil Jadhav,<br/>
-                45/2, Bhosari Pune,<br/>
-                Indrayaninagar,<br/>
-                Pune City,<br/>
+                C/o Anil Jadhav,<br />
+                45/2, Bhosari Pune,<br />
+                Indrayaninagar,<br />
+                Pune City,<br />
                 Maharashtra, India – 411026
               </span>
             </p>
             <p>
-              <strong className="text-slate-900 dark:text-white">Email:</strong><br/>
+              <strong className="text-slate-900 dark:text-white">Email:</strong><br />
               <a href="mailto:info@anjurislifesciences.com" className="text-blue-600 dark:text-blue-400 hover:underline">info@anjurislifesciences.com</a>
             </p>
             <p>
-              <strong className="text-slate-900 dark:text-white">Website:</strong><br/>
+              <strong className="text-slate-900 dark:text-white">Website:</strong><br />
               <a href="https://anjurislifesciences.com" className="text-blue-600 dark:text-blue-400 hover:underline">https://anjurislifesciences.com</a>
             </p>
           </div>
