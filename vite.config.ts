@@ -8,8 +8,18 @@ export default defineConfig({
   build: {
     rollupOptions: {
       output: {
-        manualChunks: {
-          vendor: ['react', 'react-dom', 'react-router-dom', 'react-helmet-async', 'framer-motion'],
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            if (
+              id.includes('react') ||
+              id.includes('react-dom') ||
+              id.includes('react-router-dom') ||
+              id.includes('react-helmet-async') ||
+              id.includes('framer-motion')
+            ) {
+              return 'vendor';
+            }
+          }
         },
       },
     },
